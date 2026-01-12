@@ -1,4 +1,5 @@
 export default function CTA() {
+
   return (
     <section id="contact" className="py-20 bg-gradient-primary relative overflow-hidden">
       {/* Animated gradient background */}
@@ -20,12 +21,18 @@ export default function CTA() {
             Ready to Transform Your Hiring Process?
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-primary-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-xl transform hover:scale-105">
+            <a 
+              href="mailto:tasnim@tamakkun.ai?subject=Get Started with TAMAKKUN AI&body=Hello, I would like to learn more about TAMAKKUN AI and how it can help with our talent acquisition needs."
+              className="bg-white text-primary-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-xl transform hover:scale-105 active:scale-95 text-center"
+            >
               Get Started Today
-            </button>
-            <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors shadow-xl transform hover:scale-105">
+            </a>
+            <a 
+              href="mailto:tasnim@tamakkun.ai?subject=Schedule a Demo - TAMAKKUN AI&body=Hello, I would like to schedule a demo to see TAMAKKUN AI in action."
+              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors shadow-xl transform hover:scale-105 active:scale-95 text-center"
+            >
               Schedule a Demo
-            </button>
+            </a>
           </div>
         </div>
 

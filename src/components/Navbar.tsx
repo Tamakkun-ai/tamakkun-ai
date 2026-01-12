@@ -40,12 +40,12 @@ export default function Navbar() {
             <a href="#impact" className="text-gray-300 hover:text-primary-400 transition-colors font-medium">
               Impact
             </a>
-            <a
+            {/* <a
               href="#contact"
               className="bg-gradient-primary text-white px-6 py-2.5 rounded-lg hover:shadow-glow-primary hover:scale-105 transition-all font-semibold"
             >
               Get Started
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

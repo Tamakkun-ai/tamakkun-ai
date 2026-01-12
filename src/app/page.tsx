@@ -5,7 +5,7 @@ import TalentEngine from "@/components/TalentEngine";
 import Workflow from "@/components/Workflow";
 import BusinessImpact from "@/components/BusinessImpact";
 import CompetitiveAdvantage from "@/components/CompetitiveAdvantage";
-import CTA from "@/components/CTA";
+// import CTA from "@/components/CTA";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -20,7 +20,7 @@ export default function Home() {
       <Workflow />
       <BusinessImpact />
       <CompetitiveAdvantage />
-      <CTA />
+      {/* <CTA /> */}
       <Footer />
     </main>
   );
