@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface LogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -5,52 +7,45 @@ interface LogoProps {
 }
 
 export default function Logo({ className = '', size = 'md', variant = 'full' }: LogoProps) {
-  const textSizes = {
-    sm: 'text-xl',
-    md: 'text-2xl',
-    lg: 'text-4xl',
-    xl: 'text-6xl',
+  // Size configurations for full logo (with text)
+  const fullSizes = {
+    sm: { width: 150, height: 75 },
+    md: { width: 200, height: 100 },
+    lg: { width: 300, height: 150 },
+    xl: { width: 400, height: 200 },
   };
 
+  // Size configurations for icon only (without text)
   const iconSizes = {
-    sm: 'text-lg',
-    md: 'text-xl',
-    lg: 'text-2xl',
-    xl: 'text-3xl',
+    sm: { width: 40, height: 40 },
+    md: { width: 56, height: 56 },
+    lg: { width: 80, height: 80 },
+    xl: { width: 112, height: 112 },
   };
 
-  const sizeClass = variant === 'full' ? textSizes[size] : iconSizes[size];
+  const imageSize = variant === 'full' ? fullSizes[size] : iconSizes[size];
+  const imageSrc = variant === 'full' ? '/assets/logo.png' : '/assets/icon.png';
 
-  if (variant === 'icon') {
-    // Just show "TAMAKKUN AI" text for icon variant
-    return (
-      <div className={`${className} inline-block`}>
-        <h1 className={`${sizeClass} font-bold text-white leading-tight tracking-tight`}>
-          TAMAKKUN <span className="text-primary-400">AI</span>
-        </h1>
-      </div>
-    );
-  }
-
-  // Full variant - larger display with subtitle
   return (
-    <div className={`${className} text-center`}>
-      <h1 
-        className={`${sizeClass} font-bold leading-tight mb-4`}
+    <div className={`relative ${className} inline-block`}>
+      <div 
+        className="relative transition-transform duration-300 hover:scale-105"
         style={{
-          textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 0 40px rgba(245, 158, 65, 0.4)',
+          width: `${imageSize.width}px`,
+          height: `${imageSize.height}px`,
+          filter: 'drop-shadow(0 0 20px rgba(245, 158, 65, 0.4))',
         }}
       >
-        <span className="text-white">TAMAKKUN</span>{' '}
-        <span className="text-primary-400" style={{
-          textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 0 50px rgba(245, 158, 65, 0.6)',
-        }}>AI</span>
-      </h1>
-      {size === 'xl' || size === 'lg' ? (
-        <p className="text-lg md:text-xl text-gray-400 font-medium">
-          Empowerment through Intelligence
-        </p>
-      ) : null}
+        <Image
+          src={imageSrc}
+          alt={variant === 'full' ? 'TAMAKKUN AI Logo' : 'TAMAKKUN AI Icon'}
+          width={imageSize.width}
+          height={imageSize.height}
+          className="object-contain"
+          priority
+          unoptimized={process.env.NODE_ENV === 'development'}
+        />
+      </div>
     </div>
   );
 }

@@ -1,12 +1,14 @@
+import Logo from './Logo';
+
 export default function Footer() {
   return (
     <footer className="bg-dark-950 text-gray-400 py-12 border-t border-primary-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-4">
-              TAMAKKUN <span className="text-primary-500">AI</span>
-            </h3>
+            <div className="mb-4">
+              <Logo size="md" variant="full" />
+            </div>
             <p className="text-sm text-gray-400">
               AI-Powered Talent Acquisition Outsourcing for the MENA Region
             </p>
