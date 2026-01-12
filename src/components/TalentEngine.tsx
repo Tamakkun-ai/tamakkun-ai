@@ -13,7 +13,6 @@ import {
 export default function TalentEngine() {
   const assessments = [
     {
-      number: '4.1',
       title: 'Cognitive Ability (IQ)',
       Icon: IconBrain,
       measures: [
@@ -24,7 +23,6 @@ export default function TalentEngine() {
       ]
     },
     {
-      number: '4.2',
       title: 'Emotional Intelligence (EQ)',
       Icon: IconHeart,
       measures: [
@@ -35,7 +33,6 @@ export default function TalentEngine() {
       ]
     },
     {
-      number: '4.3',
       title: 'Communication & Presence',
       Icon: IconMicrophone,
       measures: [
@@ -46,7 +43,6 @@ export default function TalentEngine() {
       ]
     },
     {
-      number: '4.4',
       title: 'AI-Driven Video Interviews',
       Icon: IconVideo,
       measures: [
@@ -57,7 +53,6 @@ export default function TalentEngine() {
       ]
     },
     {
-      number: '4.5',
       title: 'AI Screening & ICP Matching',
       Icon: IconTarget,
       measures: [
@@ -68,7 +63,6 @@ export default function TalentEngine() {
       ]
     },
     {
-      number: '4.6',
       title: 'Role Competency Assessments',
       Icon: IconGear,
       measures: [
@@ -79,7 +73,6 @@ export default function TalentEngine() {
       ]
     },
     {
-      number: '4.7',
       title: 'Adversity Quotient (AQ)',
       Icon: IconFire,
       measures: [
@@ -90,7 +83,6 @@ export default function TalentEngine() {
       ]
     },
     {
-      number: '4.8',
       title: 'Reliability & Risk Scoring',
       Icon: IconChartSquare,
       measures: [
@@ -101,7 +93,6 @@ export default function TalentEngine() {
       ]
     },
     {
-      number: '4.9',
       title: 'AI Hiring Recommendation',
       Icon: IconCheck,
       measures: [
@@ -132,7 +123,7 @@ export default function TalentEngine() {
             const IconComponent = assessment.Icon;
             return (
             <div
-              key={assessment.number}
+              key={assessment.title}
               className="bg-dark-800/80 backdrop-blur-sm rounded-xl shadow-xl p-6 border border-primary-800/30 hover:shadow-2xl hover:border-primary-600/50 transition-all group"
             >
               <div className="flex items-center mb-4">
@@ -140,7 +131,6 @@ export default function TalentEngine() {
                   <IconComponent className="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" strokeWidth={2} />
                 </div>
                 <div className="flex-1">
-                  <span className="text-sm text-primary-400 font-semibold block mb-1">{assessment.number}</span>
                   <h4 className="text-xl font-bold text-white">{assessment.title}</h4>
                 </div>
               </div>
